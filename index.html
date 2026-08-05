@@ -1,125 +1,420 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For My Favorite Person ❤️</title>
+<title>To the Love of My Life ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#ffdbe8,#fff5f8);
+overflow-x:hidden;
+color:#444;
+}
+
+/* Floating Hearts */
+
+.hearts{
+position:fixed;
+width:100%;
+height:100%;
+pointer-events:none;
+overflow:hidden;
+z-index:-1;
+}
+
+.hearts span{
+position:absolute;
+bottom:-100px;
+font-size:25px;
+animation:float 12s linear infinite;
+opacity:.8;
+}
+
+.hearts span:nth-child(1){left:10%;animation-delay:0s;}
+.hearts span:nth-child(2){left:25%;animation-delay:2s;}
+.hearts span:nth-child(3){left:40%;animation-delay:4s;}
+.hearts span:nth-child(4){left:55%;animation-delay:1s;}
+.hearts span:nth-child(5){left:70%;animation-delay:5s;}
+.hearts span:nth-child(6){left:82%;animation-delay:3s;}
+.hearts span:nth-child(7){left:90%;animation-delay:6s;}
+.hearts span:nth-child(8){left:97%;animation-delay:7s;}
+
+@keyframes float{
+
+0%{
+transform:translateY(0) rotate(0deg);
+opacity:0;
+}
+
+30%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-120vh) rotate(360deg);
+opacity:0;
+}
+
+}
+
+/* Hero */
+
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
+}
+
+.hero h1{
+font-family:'Great Vibes',cursive;
+font-size:70px;
+color:#ff4f81;
+margin-bottom:20px;
+}
+
+.hero p{
+max-width:700px;
+font-size:20px;
+line-height:1.8;
+margin-bottom:40px;
+}
+
+.envelope{
+width:180px;
+height:130px;
+background:#ff6f91;
+border-radius:12px;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:60px;
+cursor:pointer;
+transition:.4s;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.envelope:hover{
+transform:scale(1.08);
+}
+
+.tap{
+margin-top:20px;
+color:#666;
+}
+
+/* Letter */
+
+.letter{
+display:none;
+max-width:900px;
+margin:80px auto;
+background:white;
+padding:50px;
+border-radius:20px;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+.letter h2{
+font-family:'Great Vibes',cursive;
+font-size:50px;
+color:#ff4f81;
+margin-bottom:25px;
+text-align:center;
+}
+
+.letter p{
+font-size:18px;
+line-height:2;
+white-space:pre-wrap;
+}
+
+section{
+margin-top:50px;
+}
+
+ul{
+line-height:2;
+padding-left:25px;
+font-size:18px;
+}
+
+button{
+display:block;
+margin:40px auto;
+padding:15px 40px;
+border:none;
+background:#ff4f81;
+color:white;
+font-size:18px;
+border-radius:40px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+background:#ff2e6b;
+}
+
+.finalScreen{
+display:none;
+height:100vh;
+justify-content:center;
+align-items:center;
+font-size:42px;
+font-weight:bold;
+text-align:center;
+padding:30px;
+color:#ff4f81;
+animation:fade 2s;
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+}
+
+to{
+opacity:1;
+}
+
+}
+
+</style>
 
 </head>
 
 <body>
 
-<!-- Floating Hearts -->
 <div class="hearts">
 
-<span>❤</span>
-<span>💖</span>
+<span>❤️</span>
 <span>💕</span>
+<span>💖</span>
 <span>💗</span>
 <span>💞</span>
-<span>❤</span>
+<span>❤️</span>
 <span>💕</span>
 <span>💖</span>
 
 </div>
 
-<!-- Hero -->
+<div class="hero">
 
-<section class="hero">
-
-<h1> To the Love of My Life ❤️</h1>
+<h1>To the Love of My Life ❤️</h1>
 
 <p>
-
-There's no special occasion today.
-
-I just wanted to remind you how lucky I am
-
-to have you in my life.
-
+There's no special occasion today.<br>
+I just wanted to remind you<br>
+how lucky I am to have you.
 </p>
 
 <div class="envelope" onclick="openLetter()">
-
-<div class="front">
-
-📩
-
-</div>
-
+💌
 </div>
 
 <p class="tap">
-
 Click the envelope
+</p>
 
+</div>
+
+<div class="letter" id="letter">
+
+    <h2>Hi, Baby. ❤️</h2>
+
+<p id="typing"></p>
+
+<section>
+
+<h2>💌 My Promise to You</h2>
+
+<p>
+I can't promise that every day will be perfect,
+but I can promise that I'll always choose you.
+
+I'll continue learning, growing, and becoming someone who deserves the love you give me.
+
+No matter how busy life gets,
+I'll always find my way back to you,
+because you're one of the most important people in my life.
 </p>
 
 </section>
 
-<!-- Letter -->
+<section>
 
-<section id="letter" class="letter hidden">
+<h2>🌷 10 Things I Love About You</h2>
 
-<h2>Hi, baby. ❤️</h2>
+<ul>
+<li>❤️ Your beautiful smile.</li>
+<li>🌸 The way you always understand me.</li>
+<li>🤍 Your patience, especially when I'm busy.</li>
+<li>😂 The way you always make me laugh.</li>
+<li>💖 How much you care about the people you love.</li>
+<li>🫶 The comfort I feel whenever I'm with you.</li>
+<li>✨ Your kindness and your genuine heart.</li>
+<li>🌙 The way you support my dreams.</li>
+<li>🌹 The happiness you bring into my life.</li>
+<li>❤️ Simply because you're you.</li>
+</ul>
+
+</section>
+
+<section>
+
+<h2>❤️ Thank You</h2>
 
 <p>
+Thank you for reading this little website.
+
+I hope it made you smile,
+even if only for a little while.
+
+I just wanted to remind you
+how grateful I am to have you.
+
+Thank you for loving me,
+for understanding me,
+and for staying beside me.
+
+I love you.
+
+Forever and always.
+❤️
+</p>
+
+</section>
+
+<section>
+
+<h2>💖 One Last Thing...</h2>
+
+<p>
+If I had a thousand chances to meet someone,
+
+I'd still hope that every single one of them
+would somehow lead me back to you.
+
+Out of all the people in this world,
+life somehow brought us together,
+and that's something I'll never stop being grateful for.
+
+Thank you for every smile you've given me,
+every laugh we've shared,
+every moment we've spent together,
+and every time you've chosen to stay by my side.
+
+Loving you has become one of the most beautiful parts of my life.
+
+You make ordinary days feel extraordinary.
+
+I don't know what the future has in store for us,
+but I know this...
+
+If I were given another lifetime,
+another beginning,
+or even a thousand more chances...
+
+I'd still search for you.
+
+I'd still fall in love with you.
+
+And I'd still choose you.
+
+Every single time.
+
+❤️
+</p>
+
+</section>
+
+<section>
+
+<h2>📝 P.S.</h2>
+
+<p>
+If you ever feel unloved,
+
+come back to this page.
+
+Read it again.
+
+Because every single word here
+came straight from my heart.
+
+I may not always say it perfectly,
+but I'll never stop loving you
+and appreciating everything about you.
+
+❤️
+</p>
+
+</section>
+
+<button onclick="ending()">
+❤️ One Last Thing ❤️
+</button>
+
+</div>
+
+<div class="finalScreen" id="finalScreen"></div>
+
+<script>
+
+const message = `Hi, Baby. ❤️
 
 I just wanted to tell you how much I appreciate you.
 
 Even though we've only been talking for a little while these past few days,
-
 I'm still so thankful because you always make time for me whenever you can.
 
 I know we're both busy, and I completely understand that,
-
 but I still miss you every single day.
 
-<br><br>
-
 Thank you for always being so patient,
-
 understanding, and for staying by my side through everything.
 
 I honestly feel like the luckiest person in the world
-
 because I have someone as amazing as you.
 
 Having you in my life is one of the greatest blessings
-
 I could ever ask for.
 
-<br><br>
-
 I'm sorry if I haven't been able to give you
-
 as much time as you deserve lately.
 
 Things have been really busy,
-
 but I hope you know that it's never because
-
 I don't want to spend time with you.
 
 You're always on my mind.
 
-<br><br>
-
 No matter how busy life gets,
-
 I'll always choose you,
-
 care for you,
-
 and appreciate you.
-
-<br><br>
 
 Thank you for existing.
 
@@ -127,78 +422,87 @@ Thank you for loving me.
 
 Thank you for being you.
 
-I love you so much, baby. ❤️
+I love you so much, baby. ❤️`;
 
-</p>
+let index = 0;
 
-<button onclick="showFinalMessage()">
+function openLetter(){
 
-One Last Thing ❤️
+    document.querySelector(".hero").style.display = "none";
+    document.getElementById("letter").style.display = "block";
 
-</button>
+    typeLetter();
 
-</section>
+}
 
-<section id="final" class="hidden final">
+function typeLetter(){
 
-<h2>I Love You ❤️</h2>
+    if(index < message.length){
 
-<p id="finalText"></p>
+        document.getElementById("typing").innerHTML += message.charAt(index);
 
-</section>
+        index++;
+
+        setTimeout(typeLetter,35);
+
+    }
+
+}
+
+const endings = [
+
+"In case no one reminded you today... ❤️",
+
+"You are loved.",
+
+"You are appreciated.",
+
+"You are my favorite person.",
+
+"And I'll always be grateful that you came into my life. ❤️"
+
+];
+
+let current = 0;
+
+function ending(){
+
+    document.getElementById("letter").style.display = "none";
+
+    const screen = document.getElementById("finalScreen");
+
+    screen.style.display = "flex";
+
+    showEnding();
+
+}
+
+function showEnding(){
+
+    const screen = document.getElementById("finalScreen");
+
+    screen.style.opacity = 0;
+
+    setTimeout(()=>{
+
+        screen.innerHTML = endings[current];
+
+        screen.style.opacity = 1;
+        screen.style.transition = "1s";
+
+        current++;
+
+        if(current < endings.length){
+
+            setTimeout(showEnding,3000);
+
+        }
+
+    },500);
+
+}
+
+</script>
 
 </body>
-
 </html>
-
-<section>
-
-<section>
-
-    <h2>💖 One Last Thing...</h2>
-
-    <p>
-        If I had a thousand chances to meet someone,<br><br>
-
-        I'd still hope that every single one of them<br>
-        would somehow lead me back to you.<br><br>
-
-        Out of all the people in this world,<br>
-        somehow, life brought us together.<br>
-        And that's something I'll never stop being grateful for.<br><br>
-
-        Thank you for every smile you've given me,<br>
-        every laugh we've shared,<br>
-        every moment we've spent together,<br>
-        and every time you've chosen to stay by my side.<br><br>
-
-        Loving you has become one of the most beautiful parts of my life.<br>
-        You've brought me happiness in ways you'll probably never realize,<br>
-        and you've turned ordinary days into memories I'll treasure forever.<br><br>
-
-        I don't know what the future has in store for us,<br>
-        but I do know this...<br><br>
-
-        If I were given another lifetime,<br>
-        another beginning,<br>
-        or even a thousand more chances...<br><br>
-
-        I'd still search for you.<br>
-        I'd still fall in love with you.<br>
-        And I'd still choose you.<br><br>
-
-        Every single time.<br><br>
-
-        Thank you for being my favorite person,<br>
-        my safe place,<br>
-        and one of the greatest blessings I've ever received.<br><br>
-
-        I love you.<br>
-        More than these words could ever truly express.<br><br>
-
-        ❤️
-    </p>
-
-</section>
-```
-Add Love Letter Websites
