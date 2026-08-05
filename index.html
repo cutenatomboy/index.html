@@ -4,56 +4,56 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>To the Love of My Life ❤️</title>
+<title>For My Favorite Person ❤️</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html{
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:'Poppins',sans-serif;
-background:linear-gradient(135deg,#ffdbe8,#fff5f8);
-overflow-x:hidden;
-color:#444;
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#ffdce8,#fff7fb);
+    color:#555;
+    overflow-x:hidden;
 }
 
 /* Floating Hearts */
 
 .hearts{
-position:fixed;
-width:100%;
-height:100%;
-pointer-events:none;
-overflow:hidden;
-z-index:-1;
+    position:fixed;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    overflow:hidden;
+    z-index:-1;
 }
 
 .hearts span{
-position:absolute;
-bottom:-100px;
-font-size:25px;
-animation:float 12s linear infinite;
-opacity:.8;
+    position:absolute;
+    bottom:-100px;
+    font-size:28px;
+    animation:float 12s linear infinite;
+    opacity:.8;
 }
 
-.hearts span:nth-child(1){left:10%;animation-delay:0s;}
-.hearts span:nth-child(2){left:25%;animation-delay:2s;}
-.hearts span:nth-child(3){left:40%;animation-delay:4s;}
-.hearts span:nth-child(4){left:55%;animation-delay:1s;}
-.hearts span:nth-child(5){left:70%;animation-delay:5s;}
-.hearts span:nth-child(6){left:82%;animation-delay:3s;}
-.hearts span:nth-child(7){left:90%;animation-delay:6s;}
-.hearts span:nth-child(8){left:97%;animation-delay:7s;}
+.hearts span:nth-child(1){left:5%;animation-delay:0s;}
+.hearts span:nth-child(2){left:18%;animation-delay:2s;}
+.hearts span:nth-child(3){left:30%;animation-delay:4s;}
+.hearts span:nth-child(4){left:45%;animation-delay:1s;}
+.hearts span:nth-child(5){left:60%;animation-delay:5s;}
+.hearts span:nth-child(6){left:75%;animation-delay:3s;}
+.hearts span:nth-child(7){left:88%;animation-delay:6s;}
+.hearts span:nth-child(8){left:96%;animation-delay:8s;}
 
 @keyframes float{
 
@@ -62,7 +62,7 @@ transform:translateY(0) rotate(0deg);
 opacity:0;
 }
 
-30%{
+20%{
 opacity:1;
 }
 
@@ -76,41 +76,41 @@ opacity:0;
 /* Hero */
 
 .hero{
-min-height:100vh;
+height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:30px;
+padding:20px;
 }
 
 .hero h1{
 font-family:'Great Vibes',cursive;
-font-size:70px;
-color:#ff4f81;
+font-size:75px;
+color:#ff4f87;
 margin-bottom:20px;
 }
 
 .hero p{
-max-width:700px;
-font-size:20px;
+font-size:22px;
+max-width:650px;
 line-height:1.8;
-margin-bottom:40px;
 }
 
 .envelope{
-width:180px;
+margin-top:40px;
+width:190px;
 height:130px;
-background:#ff6f91;
-border-radius:12px;
+background:white;
+border-radius:15px;
 display:flex;
 justify-content:center;
 align-items:center;
-font-size:60px;
+font-size:70px;
 cursor:pointer;
 transition:.4s;
-box-shadow:0 10px 25px rgba(0,0,0,.2);
+box-shadow:0 15px 35px rgba(0,0,0,.15);
 }
 
 .envelope:hover{
@@ -119,7 +119,8 @@ transform:scale(1.08);
 
 .tap{
 margin-top:20px;
-color:#666;
+font-weight:600;
+color:#ff4f87;
 }
 
 /* Letter */
@@ -130,16 +131,16 @@ max-width:900px;
 margin:80px auto;
 background:white;
 padding:50px;
-border-radius:20px;
-box-shadow:0 15px 40px rgba(0,0,0,.15);
+border-radius:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.12);
 }
 
 .letter h2{
 font-family:'Great Vibes',cursive;
-font-size:50px;
-color:#ff4f81;
-margin-bottom:25px;
+font-size:60px;
+color:#ff4f87;
 text-align:center;
+margin-bottom:25px;
 }
 
 .letter p{
@@ -149,21 +150,21 @@ white-space:pre-wrap;
 }
 
 section{
-margin-top:50px;
+margin-top:60px;
 }
 
 ul{
-line-height:2;
 padding-left:25px;
+line-height:2;
 font-size:18px;
 }
 
 button{
 display:block;
-margin:40px auto;
+margin:50px auto;
 padding:15px 40px;
 border:none;
-background:#ff4f81;
+background:#ff4f87;
 color:white;
 font-size:18px;
 border-radius:40px;
@@ -173,7 +174,7 @@ transition:.3s;
 
 button:hover{
 transform:scale(1.05);
-background:#ff2e6b;
+background:#ff2d6f;
 }
 
 .finalScreen{
@@ -181,22 +182,30 @@ display:none;
 height:100vh;
 justify-content:center;
 align-items:center;
-font-size:42px;
-font-weight:bold;
 text-align:center;
 padding:30px;
-color:#ff4f81;
-animation:fade 2s;
+font-size:45px;
+font-weight:bold;
+color:#ff4f87;
 }
 
-@keyframes fade{
+@media(max-width:768px){
 
-from{
-opacity:0;
+.hero h1{
+font-size:55px;
 }
 
-to{
-opacity:1;
+.hero p{
+font-size:18px;
+}
+
+.letter{
+margin:40px 15px;
+padding:30px;
+}
+
+.letter h2{
+font-size:45px;
 }
 
 }
@@ -208,7 +217,6 @@ opacity:1;
 <body>
 
 <div class="hearts">
-
 <span>❤️</span>
 <span>💕</span>
 <span>💖</span>
@@ -217,32 +225,27 @@ opacity:1;
 <span>❤️</span>
 <span>💕</span>
 <span>💖</span>
-
 </div>
 
 <div class="hero">
 
-<h1>To the Love of My Life ❤️</h1>
+<h1>For My Favorite Person ❤️</h1>
 
 <p>
 There's no special occasion today.<br>
 I just wanted to remind you<br>
-how lucky I am to have you.
+how thankful and lucky I am to have you.
 </p>
 
 <div class="envelope" onclick="openLetter()">
 💌
 </div>
 
-<p class="tap">
-Click the envelope
-</p>
+<p class="tap">Click the envelope</p>
 
 </div>
 
 <div class="letter" id="letter">
-
-    <h2>Hi, Baby. ❤️</h2>
 
 <p id="typing"></p>
 
@@ -251,14 +254,15 @@ Click the envelope
 <h2>💌 My Promise to You</h2>
 
 <p>
-I can't promise that every day will be perfect,
-but I can promise that I'll always choose you.
+I can't promise that every day will be perfect, but I can promise that I'll always choose you.
 
 I'll continue learning, growing, and becoming someone who deserves the love you give me.
 
-No matter how busy life gets,
-I'll always find my way back to you,
-because you're one of the most important people in my life.
+Even when life gets busy and we don't get to spend as much time together as we'd like, I hope you never doubt how much you mean to me.
+
+You're always on my mind, and you'll always have a special place in my heart.
+
+No matter what happens, I'll keep choosing you, appreciating you, and loving you with everything I have.
 </p>
 
 </section>
@@ -268,16 +272,18 @@ because you're one of the most important people in my life.
 <h2>🌷 10 Things I Love About You</h2>
 
 <ul>
+
 <li>❤️ Your beautiful smile.</li>
 <li>🌸 The way you always understand me.</li>
 <li>🤍 Your patience, especially when I'm busy.</li>
-<li>😂 The way you always make me laugh.</li>
-<li>💖 How much you care about the people you love.</li>
+<li>😂 The way you make me laugh.</li>
+<li>💖 The love and care you give me.</li>
 <li>🫶 The comfort I feel whenever I'm with you.</li>
-<li>✨ Your kindness and your genuine heart.</li>
+<li>✨ Your kind and genuine heart.</li>
 <li>🌙 The way you support my dreams.</li>
 <li>🌹 The happiness you bring into my life.</li>
 <li>❤️ Simply because you're you.</li>
+
 </ul>
 
 </section>
@@ -289,20 +295,15 @@ because you're one of the most important people in my life.
 <p>
 Thank you for reading this little website.
 
-I hope it made you smile,
-even if only for a little while.
+I just wanted to remind you how lucky I am to have someone like you.
 
-I just wanted to remind you
-how grateful I am to have you.
+Thank you for loving me.
 
-Thank you for loving me,
-for understanding me,
-and for staying beside me.
+Thank you for understanding me.
 
-I love you.
+Thank you for staying beside me.
 
-Forever and always.
-❤️
+I love you more than words could ever explain.
 </p>
 
 </section>
@@ -312,29 +313,29 @@ Forever and always.
 <h2>💖 One Last Thing...</h2>
 
 <p>
+
 If I had a thousand chances to meet someone,
 
-I'd still hope that every single one of them
-would somehow lead me back to you.
+I'd still hope every single one of them would somehow lead me back to you.
 
 Out of all the people in this world,
+
 life somehow brought us together,
+
 and that's something I'll never stop being grateful for.
 
-Thank you for every smile you've given me,
-every laugh we've shared,
-every moment we've spent together,
-and every time you've chosen to stay by my side.
+Thank you for every smile,
 
-Loving you has become one of the most beautiful parts of my life.
+every laugh,
 
-You make ordinary days feel extraordinary.
+every memory,
 
-I don't know what the future has in store for us,
-but I know this...
+and every moment we've shared together.
 
-If I were given another lifetime,
-another beginning,
+If I were given another lifetime...
+
+another beginning...
+
 or even a thousand more chances...
 
 I'd still search for you.
@@ -346,6 +347,7 @@ And I'd still choose you.
 Every single time.
 
 ❤️
+
 </p>
 
 </section>
@@ -355,26 +357,37 @@ Every single time.
 <h2>📝 P.S.</h2>
 
 <p>
-If you ever feel unloved,
 
-come back to this page.
+If you ever feel unloved...
+
+Come back to this website.
 
 Read it again.
 
-Because every single word here
-came straight from my heart.
+Because every single word here came straight from my heart.
 
-I may not always say it perfectly,
-but I'll never stop loving you
-and appreciating everything about you.
+I may not always say everything perfectly,
 
-❤️
+and I may get busy sometimes,
+
+but one thing will never change...
+
+I'll never stop loving you.
+
+I'll never stop appreciating you.
+
+I'll never stop choosing you.
+
+Forever and always. ❤️
+
 </p>
 
 </section>
 
 <button onclick="ending()">
+
 ❤️ One Last Thing ❤️
+
 </button>
 
 </div>
@@ -384,41 +397,48 @@ and appreciating everything about you.
 <script>
 
 const message = `Hi, Baby. ❤️
+There's no special occasion today. I just wanted to remind you how thankful I am to have you in my life.
 
-I just want to say thank you for always being so understanding, patient, and loving. I know I've been really busy these past few days, and I'm sorry if I haven't been able to give you the time and attention you deserve. Please know that it's never because you're any less important to me.
+I'm sorry if I haven't been able to give you as much time lately. Things have been really busy, but please know that you're always on my mind. I miss you every day, and not having enough time together never changes how much I love you.
 
-I appreciate everything you do, especially how you continue to support and love me even when life gets hectic. Your love brings me so much comfort, and I'm incredibly grateful to have someone as amazing as you.
+Thank you for always being patient, understanding, and staying by my side. I honestly feel like the luckiest person because I have someone as amazing, kind, and caring as you. Thank you for loving me even on my busiest days.
 
-Thank you for choosing me every day. I promise to make more time for us and to keep loving you the best way I can. I love you more than words can ever express, and I'll never stop being thankful for you.
+I hope you never forget how much you mean to me. No matter what happens, I'll always choose you, appreciate you, and be grateful that you came into my life.
 
-Always yours,
+Thank you for being my safe place, my happiness, and my favorite person.
+
+I love you so much, baby. Always and forever. ❤️
+
+
+❤️`;
 
 let index = 0;
 
 function openLetter(){
 
-    document.querySelector(".hero").style.display = "none";
-    document.getElementById("letter").style.display = "block";
+document.querySelector(".hero").style.display="none";
 
-    typeLetter();
+document.getElementById("letter").style.display="block";
+
+typeLetter();
 
 }
 
 function typeLetter(){
 
-    if(index < message.length){
+if(index<message.length){
 
-        document.getElementById("typing").innerHTML += message.charAt(index);
+document.getElementById("typing").innerHTML+=message.charAt(index);
 
-        index++;
+index++;
 
-        setTimeout(typeLetter,35);
-
-    }
+setTimeout(typeLetter,35);
 
 }
 
-const endings = [
+}
+
+const endings=[
 
 "In case no one reminded you today... ❤️",
 
@@ -432,42 +452,33 @@ const endings = [
 
 ];
 
-let current = 0;
+let current=0;
 
 function ending(){
 
-    document.getElementById("letter").style.display = "none";
+document.getElementById("letter").style.display="none";
 
-    const screen = document.getElementById("finalScreen");
+const screen=document.getElementById("finalScreen");
 
-    screen.style.display = "flex";
+screen.style.display="flex";
 
-    showEnding();
+showEnding();
 
 }
 
 function showEnding(){
 
-    const screen = document.getElementById("finalScreen");
+const screen=document.getElementById("finalScreen");
 
-    screen.style.opacity = 0;
+screen.innerHTML=endings[current];
 
-    setTimeout(()=>{
+current++;
 
-        screen.innerHTML = endings[current];
+if(current<endings.length){
 
-        screen.style.opacity = 1;
-        screen.style.transition = "1s";
+setTimeout(showEnding,2500);
 
-        current++;
-
-        if(current < endings.length){
-
-            setTimeout(showEnding,3000);
-
-        }
-
-    },500);
+}
 
 }
 
