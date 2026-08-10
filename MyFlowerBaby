@@ -1,0 +1,493 @@
+Added romantic flower surprise
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Love 🌷</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Georgia, serif;
+            text-align: center;
+            background: linear-gradient(135deg, #ffe5ed, #fff8fa);
+            overflow: hidden;
+        }
+
+        .card {
+            width: 92%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 35px 25px;
+            background: rgba(255, 255, 255, 0.96);
+            border-radius: 30px;
+            box-shadow: 0 15px 40px rgba(150, 70, 90, 0.2);
+        }
+
+        h1 {
+            color: #c94f73;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: #c94f73;
+        }
+
+        p {
+            color: #5f5f5f;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+
+        .main-flower {
+            font-size: 90px;
+            animation: float 2.5s ease-in-out infinite;
+        }
+
+        .buttons {
+            position: relative;
+            height: 80px;
+            margin-top: 20px;
+        }
+
+        button {
+            border: none;
+            border-radius: 30px;
+            padding: 14px 30px;
+            font-size: 17px;
+            cursor: pointer;
+            color: white;
+            background: #d85b7d;
+            transition: 0.25s;
+        }
+
+        #yesButton:hover {
+            transform: scale(1.1);
+        }
+
+        #noButton {
+            position: absolute;
+            margin-left: 10px;
+        }
+
+        #surprise {
+            display: none;
+        }
+
+        .heart {
+            font-size: 55px;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        /* FLOWERS */
+
+        .flower-garden {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 25px;
+            margin: 25px 0;
+            height: 190px;
+        }
+
+        .flower {
+            position: relative;
+            width: 90px;
+            height: 180px;
+        }
+
+        .stem {
+            position: absolute;
+            width: 7px;
+            height: 110px;
+            background: #4f8b55;
+            bottom: 0;
+            left: 42px;
+            border-radius: 10px;
+        }
+
+        .leaf {
+            position: absolute;
+            width: 45px;
+            height: 20px;
+            background: #57945c;
+            border-radius: 100% 0;
+            bottom: 55px;
+        }
+
+        .leaf.left {
+            left: 5px;
+            transform: rotate(-30deg);
+        }
+
+        .leaf.right {
+            right: 0;
+            transform: rotate(30deg) scaleX(-1);
+        }
+
+        /* Tulip */
+
+        .tulip-head {
+            position: absolute;
+            top: 25px;
+            left: 18px;
+            width: 55px;
+            height: 65px;
+            background: linear-gradient(145deg, #e85c78, #b83259);
+            border-radius: 45% 45% 48% 48%;
+            z-index: 2;
+        }
+
+        .tulip-head::before,
+        .tulip-head::after {
+            content: "";
+            position: absolute;
+            background: #d94d6d;
+            width: 28px;
+            height: 55px;
+            top: -7px;
+            border-radius: 60% 60% 30% 30%;
+        }
+
+        .tulip-head::before {
+            left: -5px;
+            transform: rotate(-15deg);
+        }
+
+        .tulip-head::after {
+            right: -5px;
+            transform: rotate(15deg);
+        }
+
+        /* Lily */
+
+        .lily-head {
+            position: absolute;
+            top: 25px;
+            left: 10px;
+            width: 70px;
+            height: 70px;
+            z-index: 2;
+        }
+
+        .lily-petal {
+            position: absolute;
+            width: 34px;
+            height: 65px;
+            background: linear-gradient(#fffdfd, #f4dce4);
+            border-radius: 70% 30% 70% 30%;
+            left: 18px;
+            top: 2px;
+            transform-origin: bottom center;
+        }
+
+        .petal1 {
+            transform: rotate(0deg);
+        }
+
+        .petal2 {
+            transform: rotate(60deg);
+        }
+
+        .petal3 {
+            transform: rotate(120deg);
+        }
+
+        .petal4 {
+            transform: rotate(180deg);
+        }
+
+        .petal5 {
+            transform: rotate(240deg);
+        }
+
+        .petal6 {
+            transform: rotate(300deg);
+        }
+
+        .lily-center {
+            position: absolute;
+            width: 18px;
+            height: 18px;
+            background: #e8b83f;
+            border-radius: 50%;
+            left: 26px;
+            top: 27px;
+            z-index: 5;
+        }
+
+        .message {
+            margin-top: 15px;
+        }
+
+        .signature {
+            margin-top: 25px;
+            color: #c94f73;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        /* Floating hearts */
+
+        .floating-heart {
+            position: fixed;
+            bottom: -30px;
+            font-size: 20px;
+            animation: rise 6s linear infinite;
+            opacity: 0;
+        }
+
+        .heart1 {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .heart2 {
+            left: 30%;
+            animation-delay: 2s;
+        }
+
+        .heart3 {
+            left: 60%;
+            animation-delay: 1s;
+        }
+
+        .heart4 {
+            left: 85%;
+            animation-delay: 3s;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-110vh);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="floating-heart heart1">💗</div>
+    <div class="floating-heart heart2">💕</div>
+    <div class="floating-heart heart3">💖</div>
+    <div class="floating-heart heart4">💗</div>
+
+    <div class="card">
+
+        <!-- QUESTION -->
+        <div id="question">
+
+            <div class="main-flower">🌷</div>
+
+            <h1>For My Love 💗</h1>
+
+            <p>
+                I have something small for you...
+                but it comes with a lot of love.
+            </p>
+
+            <p>
+                I picked these flowers for you because
+                you deserve something beautiful. 🌷
+            </p>
+
+            <p>
+                <b>Will you accept my flowers?</b>
+            </p>
+
+            <div class="buttons">
+
+                <button id="yesButton" onclick="sayYes()">
+                    YES 💕
+                </button>
+
+                <button id="noButton"
+                    onmouseover="moveNo()"
+                    onclick="moveNo()">
+                    NO 😭
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- ROMANTIC SURPRISE -->
+        <div id="surprise">
+
+            <div class="heart">❤️</div>
+
+            <h1>For You, My Love 🌷</h1>
+
+            <div class="flower-garden">
+
+                <!-- Tulip -->
+                <div class="flower">
+
+                    <div class="tulip-head"></div>
+
+                    <div class="stem"></div>
+
+                    <div class="leaf left"></div>
+                    <div class="leaf right"></div>
+
+                </div>
+
+                <!-- Lily -->
+                <div class="flower">
+
+                    <div class="lily-head">
+
+                        <div class="lily-petal petal1"></div>
+                        <div class="lily-petal petal2"></div>
+                        <div class="lily-petal petal3"></div>
+                        <div class="lily-petal petal4"></div>
+                        <div class="lily-petal petal5"></div>
+                        <div class="lily-petal petal6"></div>
+
+                        <div class="lily-center"></div>
+
+                    </div>
+
+                    <div class="stem"></div>
+
+                    <div class="leaf left"></div>
+                    <div class="leaf right"></div>
+
+                </div>
+
+                <!-- Tulip -->
+                <div class="flower">
+
+                    <div class="tulip-head"></div>
+
+                    <div class="stem"></div>
+
+                    <div class="leaf left"></div>
+                    <div class="leaf right"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="message">
+
+                <h2>You Said Yes! 🥹❤️</h2>
+
+                <p>
+                    I know these are just flowers,
+                    but I wanted to give you something
+                    that represents how much I appreciate you.
+                </p>
+
+                <p>
+                    <b>
+                        The tulips are for the happiness
+                        you bring into my life,
+                        and the lilies are for the
+                        beautiful person that you are.
+                    </b>
+                </p>
+
+                <p>
+                    Thank you for being someone who makes
+                    ordinary days feel a little more special.
+                    Your presence means more to me
+                    than I can explain.
+                </p>
+
+                <p>
+                    I hope whenever you see these flowers,
+                    you remember that someone is always
+                    wishing to see you happy. 🌷
+                </p>
+
+                <p>
+                    <b>
+                        You deserve all the beautiful things
+                        in this world. ❤️
+                    </b>
+                </p>
+
+                <div class="signature">
+                    With love, always. 💗
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function sayYes() {
+
+            document.getElementById("question").style.display = "none";
+
+            document.getElementById("surprise").style.display = "block";
+
+        }
+
+
+        function moveNo() {
+
+            const button = document.getElementById("noButton");
+
+            const x = Math.random() * 180 - 90;
+
+            const y = Math.random() * 70 - 35;
+
+            button.style.transform =
+                `translate(${x}px, ${y}px)`;
+
+        }
+
+    </script>
+
+</body>
+</html>
